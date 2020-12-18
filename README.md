@@ -5,6 +5,8 @@ Einfaches Führen eines Tagebuches.
 ## Arbeitsweise
 
 Dieses Script hilft Dir, schnell und einfach mit vim ein Tagebuch zu führen. 
+Du solltest die Variable NOTES_DIRECTORY anpassen. Hier notierst Du, wo Deine Dateien gespeichert werden. 
+Das script erzeugt diese Struktur:
 
 ```
 ── 2017
@@ -34,7 +36,13 @@ Dieses Script hilft Dir, schnell und einfach mit vim ein Tagebuch zu führen.
     ├── 2020-06.md
     └── 2020-12.md
 ```
+Die Dateien selbst haben dieses Format:
 
+``` 
+# YYYY-MM-DD
 
+- 
+``` 
+# TODO:
 
-
+- [ ] Wenn eine Datei neu angelegt wird, werden auch drei Umbrüche erstellt. Das muss raus. 
