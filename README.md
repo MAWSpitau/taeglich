@@ -1,6 +1,6 @@
 # taeglich.sh
 
-Einfaches Führen eines Tagebuches. 
+Einfaches Führen eines Tagebuches. In markdown mit vim.
 
 ## Arbeitsweise
 
