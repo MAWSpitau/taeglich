@@ -9,8 +9,6 @@
 # USAGE:
 # [[ $DEBUG ]] && echo ${DEBUG} "Nachricht"
 
-
-
 set -e
 
 # In welchem Verzeichnis sollen die Einträge gespeichert werden?
@@ -39,7 +37,10 @@ fi
 HEADER="# $(date +%Y-%m-%d)"
 [[ $DEBUG ]] && echo ${DEBUG} "HEADER: " ${HEADER}
 
-# Wenn der Header für heute noch nicht gestzt ist, dann erledige ich das für dich und starte mit einem Spiegelstrich
+# Wenn die Datei noch nicht existiert, dann wird sie mit dem entsprechenden header geöffnet.
+[[ -f ${NOTES_PATH} ]] || printf "${HEADER}\n\n- " >> "${NOTES_PATH}"
+
+# Wenn der Header für heute noch nicht gesetzt ist, dann erledige ich das für dich und starte mit einem Spiegelstrich
 [[ `grep "${HEADER}" ${NOTES_PATH}` == ""  ]] && printf "\n\n\n${HEADER}\n\n- " >> "${NOTES_PATH}"
 
 # vim startet mit einigen parametern.

@@ -45,4 +45,4 @@ Die Dateien selbst haben dieses Format:
 ``` 
 # TODO:
 
-- [ ] Wenn eine Datei neu angelegt wird, werden auch drei Umbrüche erstellt. Das muss raus. 
+- [x] Wenn eine Datei neu angelegt wird, werden auch drei Umbrüche erstellt. Das muss raus. 
