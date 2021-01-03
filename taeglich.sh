@@ -33,12 +33,13 @@ if [ ! -d "${NOTES_DIRECTORY}" ]; then
     done
 fi
 
-# Überschrift in Markdown der ersten bene definieren.
-HEADER="# $(date +%Y-%m-%d)"
+# Überschrift in Markdown der zweiten Ebene definieren.
+HEADER="## $(date '+%Y-%m-%d, %A')"
+MONTH="# $(date +%B)"
 [[ $DEBUG ]] && echo ${DEBUG} "HEADER: " ${HEADER}
 
 # Wenn die Datei noch nicht existiert, dann wird sie mit dem entsprechenden header geöffnet.
-[[ -f ${NOTES_PATH} ]] || printf "${HEADER}\n\n- " >> "${NOTES_PATH}"
+[[ -f ${NOTES_PATH} ]] || printf "${MONTH}\n\n${HEADER}\n\n- " >> "${NOTES_PATH}"
 
 # Wenn der Header für heute noch nicht gesetzt ist, dann erledige ich das für dich und starte mit einem Spiegelstrich
 [[ `grep "${HEADER}" ${NOTES_PATH}` == ""  ]] && printf "\n\n\n${HEADER}\n\n- " >> "${NOTES_PATH}"
