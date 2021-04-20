@@ -12,7 +12,7 @@
 set -e
 
 # In welchem Verzeichnis sollen die Einträge gespeichert werden?
-readonly NOTES_DIRECTORY="${HOME}/data/wiki/taeglich/$(date +%Y)" 
+readonly NOTES_DIRECTORY="${HOME}/Dokumente/notizen/000_taeglich/$(date +%Y)" 
 
 # Wie sollen die Dateien heißen? 
 readonly NOTES_FILE="$(date +%Y-%m).md"
@@ -48,4 +48,8 @@ MONTH="# $(date +%B)"
 # "+ normal G$" 	- startet im normalen Modus und sprint ans Dateiende und an die letzte Stelle der Zeile
 # + set nofoldenable "  - entfaltet alles. 
 # +startinsert! 	- startet im append Modus. 
-vim "+ normal G$" "+ set nofoldenable " +startinsert! $NOTES_PATH
+#vim "+ normal G$" "+ set nofoldenable " +startinsert! $NOTES_PATH
+
+# Aus einem mir nicht bekannten Grund, wird nach dem Öffenen immer eine Zeichenkette eingesetzt, die ich zunächst löschen muss, wenn ich im insertmode starte. Ich lasse das nun mit dem startinsert und drücke zum Editieren eben i o a ;)
+
+vim "+ normal G$" "+ set nofoldenable " $NOTES_PATH
